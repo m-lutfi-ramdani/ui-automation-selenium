@@ -1,0 +1,83 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-11-08T05:48:34.894Z",
+        "line": 4,
+        "name": "User should be able to Submit the data in a form",
+        "description": "",
+        "id": "form-feature;user-should-be-able-to-submit-the-data-in-a-form",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 61146000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User launch the application",
+            "match": {
+              "location": "StepDefinition.FormStepDefinition.user_launch_the_application()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2965000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User should be navigated to the Form page",
+            "match": {
+              "location": "StepDefinition.FormStepDefinition.user_should_be_navigated_to_the_form_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 27000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User should be able to see title page is written as Selenium Practice Form",
+            "match": {
+              "location": "StepDefinition.FormStepDefinition.user_should_be_able_to_see_title_page_is_written_as_selenium_practice_form()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2846000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User should be able to enter first name in First Name field \"Muhamad Lutfi\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Muhamad Lutfi\"",
+                  "offset": 60
+                }
+              ],
+              "location": "StepDefinition.FormStepDefinition.user_should_be_able_to_enter_first_name_in_first_name_field(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@form"
+          }
+        ]
+      }
+    ],
+    "name": "Form feature",
+    "description": "",
+    "id": "form-feature",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/Form.feature",
+    "tags": []
+  }
+]

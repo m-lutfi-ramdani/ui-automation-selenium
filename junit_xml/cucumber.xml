@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="70.333">
+<testcase classname="Form feature" name="User should be able to Submit the data in a form" time="68.117">
+<system-out><![CDATA[Given User launch the application...........................................passed
+Then User should be navigated to the Form page..............................passed
+And User should be able to see title page is written as Selenium Practice Form.passed
+And User should be able to enter first name in First Name field "Muhamad Lutfi".passed
+]]></system-out>
+</testcase>
+</testsuite>
