@@ -12,6 +12,6 @@ public class ConstantSelectMenu {
 	//Validation
 	public static final String SELECT_MENU_VALIDATE = "//div[@id='withOptGroup']//div[contains(@class,'css-1hwfws3')]";
 	public static final String SELECT_ONE_VALIDATE = "//div[@id='selectOne']//div[contains(@class,'css-1hwfws3')]";
-	public static final String MULTISELECT_VALIDATE = "//div[@id='selectMenuContainer']//div[@class='row']//div[@class=' css-1hwfws3']";
+	public static final String MULTISELECT_VALIDATE = "//div[@id='selectMenuContainer']//div[@class='row']//div[@class=' css-1hwfws3']/div/div/div[@class='css-12jo7m5']";
 
 }

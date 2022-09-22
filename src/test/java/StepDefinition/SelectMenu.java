@@ -17,7 +17,7 @@ import io.cucumber.java.en.When;
 
 public class SelectMenu extends CommonLib {
 	
-	private static String[] multiSelect = {"Green", "Blue", "Black", "Red"};
+//	private static String[] multiSelect = {"Green", "Blue", "Black", "Red"};
 	
 	//App will closed after execution
 	@After
@@ -58,28 +58,39 @@ public class SelectMenu extends CommonLib {
 
 	}
 
-	@When("User choose multi select drop down all color")
-	public void user_choose_multi_select_drop_down_all_color() throws Throwable {
+	@When("User choose multi select drop down all color {string}")
+	public void user_choose_multi_select_drop_down_all_color(String multiSelect) throws Throwable {
+//		WebElement multiSelectField = driver.findElement(By.xpath(ConstantSelectMenu.MULTISELECT_FIELD));
+//		for (String input : multiSelect) {
+//			multiSelectField.sendKeys(input);
+//			multiSelectField.sendKeys(Keys.ENTER);
+//		};
+		String[] multiSelectArr= multiSelect.split(",");
 		WebElement multiSelectField = driver.findElement(By.xpath(ConstantSelectMenu.MULTISELECT_FIELD));
-		for (String input : multiSelect) {
+		for (String input : multiSelectArr) {
 			multiSelectField.sendKeys(input);
 			multiSelectField.sendKeys(Keys.ENTER);
 		};
 	}
 
-	@Then("User success input all select menu {string} {string} {string}")
-	public void user_success_input_all_select_menu(String selectValue, String selectOne, String oldStyleSelect) throws Throwable {
+	@Then("User success input all select menu {string} {string} {string} {string}")
+	public void user_success_input_all_select_menu(String selectValue, String selectOne, String oldStyleSelect, String multiSelect) throws Throwable {
 	    CommonLib.textValidation(ConstantSelectMenu.SELECT_MENU_VALIDATE, selectValue);
 	    CommonLib.textValidation(ConstantSelectMenu.SELECT_ONE_VALIDATE, selectOne);
 	    CommonLib.textValidation(ConstantSelectMenu.OLD_SELECT_DROPDOWN, oldStyleSelect);
 		List<WebElement> multiSelectField = driver.findElements(By.xpath(ConstantSelectMenu.MULTISELECT_VALIDATE));
-		String multiSelectActual = multiSelectField.get(0).getText();
+//		String multiSelectActual = multiSelectField.get(0).getText();
+		String[] multiSelectArr= multiSelect.split(",");
 		try {
-	    	for (String input : multiSelect) {
-		    		Assert.assertTrue("\n" + " Text - Actual : " + multiSelectActual + "\n" + " Text - Expected : " + input, multiSelectActual.contains(input));
-	    		}
+//	    	for (String input : multiSelectArr) {
+//		    		Assert.assertTrue("\n" + " Text - Actual : " + multiSelectActual + "\n" + " Text - Expected : " + input, multiSelectActual.contains(input));
+//	    		}
+			for(int i=0; i<multiSelectField.size(); i++) {
+				String multiSelectActual = multiSelectField.get(i).getText();
+	    		Assert.assertTrue("\n" + " Text - Actual : " + multiSelectActual + "\n" + " Text - Expected : " + multiSelectArr[i], multiSelectActual.equals(multiSelectArr[i]));
+			}
 	    } catch (Exception e) {
-	    	System.out.println("\nException caught");
+	    	System.out.println("\nException caught" + e.getMessage());
 	    }
 		
 	}

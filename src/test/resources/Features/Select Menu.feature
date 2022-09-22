@@ -7,10 +7,10 @@ Feature: Select Menu
 		And User choose select value "<selectValue>"
 		And User choose select one "<selectOne>"
 		And User choose old style select menu "<oldStyleSelect>"
-		And User choose multi select drop down all color
-		Then User success input all select menu "<selectValue>" "<selectOne>" "<oldStyleSelect>"
+		And User choose multi select drop down all color "<multiSelect>"
+		Then User success input all select menu "<selectValue>" "<selectOne>" "<oldStyleSelect>" "<multiSelect>"
 
 		
 	Examples:
-	|titlePage	|selectValue		 |selectOne	|oldStyleSelect	|
-	|Select Menu|Another root option |Other		|Aqua			|
+	|titlePage	|selectValue		 |selectOne	|oldStyleSelect	|multiSelect|
+	|Select Menu|Another root option |Other		|Aqua			|Green,Blue,Black,Red|
